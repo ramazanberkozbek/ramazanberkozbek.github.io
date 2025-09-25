@@ -1,98 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ramazan Özbek</title>
-  <style>
-    body {
-      font-family: 'Courier New', Courier, monospace;
-      margin: 0;
-      padding: 20px;
-      background-color: #333;
-      color: #f4f4f4;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    /* Main Theme */
-    body.dark-mode {
-        background-color: #333;
-        color: #f4f4f4;
-    }
 
-    body.light-mode {
-        background-color: #f4f4f4;
-        color: #333;
-    }
-    header {
-        text-align: center;
-        padding: 20px;
-        background-color: #f4f4f4;
-        color: #333;
-        width: 100%;
-        margin: 10px -20px 20px -20px;
-        position: relative;
-        user-select: none;
-    }
-    header h1 {
-        font-size: 3em;
-        margin: 0;
-        font-weight: bold;
-    }
-    #theme-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        background-color: #f4f4f4;
-        color: #333;
-        border: 2px solid #333;
-        border-radius: 50%;
-        cursor: pointer;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.5em;
-        box-shadow: 2px 2px 0 #666;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    }
-    #theme-toggle::before {
-      content: '☀️';
-    }
-    .dark-mode #theme-toggle::before {
-        content: '🌙';
-    }
-    .container {
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #444;
-        border: 2px solid #333;
-        box-shadow: 5px 5px 0 #333;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .section {
-        margin-bottom: 40px;
-        padding: 20px;
-        background-color: #555;
-        border: 2px solid #333;
-        box-shadow: 5px 5px 0 #333;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .section h2 {
-        font-size: 2em;
-        margin-bottom: 10px;
-    }
-    .section p, .section ul {
-        line-height: 1.6;
-        font-size: 1.2em;
-    }
-    .main {
-        display: flex;
-        gap: 20px;
-    }
-    /* İleride kullanıcam xd
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramazan Özbek</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            background-color: #333;
+            color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Main Theme */
+        body.dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        body.light-mode {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            width: 100%;
+            margin: 10px -20px 20px -20px;
+            position: relative;
+            user-select: none;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        #theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+            border: 2px solid #333;
+            border-radius: 50%;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5em;
+            box-shadow: 2px 2px 0 #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        #theme-toggle::before {
+            content: '☀️';
+        }
+
+        .dark-mode #theme-toggle::before {
+            content: '🌙';
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #444;
+            border: 2px solid #333;
+            box-shadow: 5px 5px 0 #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #555;
+            border: 2px solid #333;
+            box-shadow: 5px 5px 0 #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .section p,
+        .section ul {
+            line-height: 1.6;
+            font-size: 1.2em;
+        }
+
+        .main {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* İleride kullanıcam xd
     .job-list {
         width: 30%;
     }
@@ -128,160 +142,186 @@
         margin-top: 0;
     }
     */
-    .projects-container {
-        display: flex;
-        gap: 20px;
-        justify-content: space-between;
-    }
-    .project-card {
-        flex: 1;
-        padding: 20px;
-        background-color: #555;
-        border: 2px solid #333;
-        box-shadow: 5px 5px 0 #333;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-        position: relative;
-        overflow: hidden;
-    }
-    .project-card:hover {
-        background-color: #666;
-    }
-    .project-card h3 {
-        margin-top: 0;
-        font-size: 1.5em;
-        text-align: center;
-    }
-    .project-details-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        transition: opacity 0.3s ease;
-    }
-    .project-details-box {
-        background-color: #555;
-        padding: 30px;
-        border: 2px solid #333;
-        box-shadow: 5px 5px 0 #333;
-        max-width: 600px;
-        text-align: center;
-        position: relative;
-    }
-    .project-details-box h3 {
-        margin-top: 0;
-        font-size: 2em;
-    }
-    .project-details-box p {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-    }
-    .retro-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #333;
-        color: #fff;
-        text-decoration: none;
-        border: 2px solid #fff;
-        box-shadow: 2px 2px 0 #fff;
-        transition: background-color 0.3s, box-shadow 0.3s;
-    }
-    .retro-button:hover {
-        background-color: #fff;
-        color: #333;
-        box-shadow: 2px 2px 0 #333;
-    }
-    .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: transparent;
-        border: none;
-        color: #fff; /* Default color for dark mode */
-        font-size: 1.5em;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-    .light-mode .close-button {
-        color: #333; 
-    }
-    .light-mode header {
-        background-color: #333;
-        color: #f4f4f4;
-    }
-    .light-mode #theme-toggle {
-        background-color: #333;
-        color: #f4f4f4;
-        border-color: #f4f4f4;
-    }
-    .light-mode .container {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: #333;
-    }
-    .light-mode .section {
-        background-color: #fff;
-        color: #333;
-    }
-    .light-mode .job-list li {
-        background-color: #ddd;
-        border-color: #ccc;
-    }
-    .light-mode .job-list li:hover {
-        background-color: #ccc;
-    }
-    .light-mode .job-list li.active {
-        background-color: #bbb;
-    }
-    .light-mode .job-details {
-        background-color: #fff;
-    }
-    .light-mode .project-card {
-        background-color: #ddd;
-        color: #333;
-    }
-    .light-mode .project-details-box {
-        background-color: #fff;
-        color: #333;
-    }
-    .light-mode .retro-button {
-        background-color: #f4f4f4;
-        color: #333;
-        box-shadow: 2px 2px 0 #333;
-    }
-    .light-mode .retro-button:hover {
-        background-color: #333;
-        color: #f4f4f4;
-        box-shadow: 2px 2px 0 #f4f4f4;
-    }
-    .light-mode a {
-        color: #333;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Ramazan Özbek</h1>
-    <button id="theme-toggle" title="Switch to dark mode"></button>
-  </header>
-  <div class="container">
-    
-    <!-- Hakkımda -->
-    <div class="about section">
-      <h2>About Me</h2>
-      <p>I'm Ramazan. I'm a 4rd-year Computer Engineering student at the University of Osmaniye, 
-        focusing on Software Engineering and Machine Learning research. 
-        When I'm not coding, you can find me in the gym, out on a walk, or training in mixed martial arts.
-      </p>
-    </div>
+        .projects-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
 
-    <!-- Job İleride kullanıcam xd
+        .project-card {
+            flex: 1;
+            padding: 20px;
+            background-color: #555;
+            border: 2px solid #333;
+            box-shadow: 5px 5px 0 #333;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            background-color: #666;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .project-details-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-details-box {
+            background-color: #555;
+            padding: 30px;
+            border: 2px solid #333;
+            box-shadow: 5px 5px 0 #333;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .project-details-box h3 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+
+        .project-details-box p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .retro-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid #fff;
+            box-shadow: 2px 2px 0 #fff;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .retro-button:hover {
+            background-color: #fff;
+            color: #333;
+            box-shadow: 2px 2px 0 #333;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            /* Default color for dark mode */
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .light-mode .close-button {
+            color: #333;
+        }
+
+        .light-mode header {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        .light-mode #theme-toggle {
+            background-color: #333;
+            color: #f4f4f4;
+            border-color: #f4f4f4;
+        }
+
+        .light-mode .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .light-mode .section {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .light-mode .job-list li {
+            background-color: #ddd;
+            border-color: #ccc;
+        }
+
+        .light-mode .job-list li:hover {
+            background-color: #ccc;
+        }
+
+        .light-mode .job-list li.active {
+            background-color: #bbb;
+        }
+
+        .light-mode .job-details {
+            background-color: #fff;
+        }
+
+        .light-mode .project-card {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .light-mode .project-details-box {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .light-mode .retro-button {
+            background-color: #f4f4f4;
+            color: #333;
+            box-shadow: 2px 2px 0 #333;
+        }
+
+        .light-mode .retro-button:hover {
+            background-color: #333;
+            color: #f4f4f4;
+            box-shadow: 2px 2px 0 #f4f4f4;
+        }
+
+        .light-mode a {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ramazan Özbek</h1>
+        <button id="theme-toggle" title="Switch to dark mode"></button>
+    </header>
+    <div class="container">
+
+        <!-- Hakkımda -->
+        <div class="about section">
+            <h2>About Me</h2>
+            <p>I'm Ramazan. I'm a 4rd-year Computer Engineering student at the University of Osmaniye,
+                focusing on Software Engineering and Machine Learning research.
+                When I'm not coding, you can find me in the gym, out on a walk, or training in mixed martial arts.
+            </p>
+        </div>
+
+        <!-- Job İleride kullanıcam xd
     <div class="job-section">
       <div class="job-list">
         <h2>Experience</h2>
@@ -301,48 +341,49 @@
     <div>
     -->
 
-    <!-- Projeler -->
-    <div class="project section">
-      <h2>Projects</h2>
-      <div class="projects-container">
-        <div class="project-card" data-project></div>
-        <div class="project-card" data-project></div>
-      </div>
+        <!-- Projeler -->
+        <div class="project section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card" data-project></div>
+                <div class="project-card" data-project></div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="education section">
+            <h2>Education</h2>
+            <p><strong>Osmaniye Korkut Ata University</strong></p>
+            <p>Bachelor of Computer Engineering</p>
+            <p><em>Sep 2021 - Jun 2025 | Osmaniye, Turkiye</em></p>
+        </div>
+
+        <!-- Skills -->
+        <div class="skills section">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Languages : </strong>Python, Next.js, Swift</li>
+                <li><strong>Development Tools :</strong>Docker, PostgreSQL, DBeaver, Git</li>
+            </ul>
+        </div>
+
     </div>
+    <script>
+        // Dark-Light Mode
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.title = 'Switch to Light Mode';
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
 
-    <!-- Education -->
-    <div class="education section">
-      <h2>Education</h2>
-      <p><strong>Osmaniye Korkut Ata University</strong></p>
-      <p>Bachelor of Computer Engineering</p>
-      <p><em>Sep 2021 - Jun 2025 | Osmaniye, Turkiye</em></p>
-    </div>
-
-    <!-- Skills -->
-     <div class="skills section">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages : </strong>Python, Swift, JavaScript</li>
-        <li><strong>ML/AI Tools :</strong>TensorFlow, Keras, NumPy, React</li>
-      </ul>
-     </div>
-
-  </div>
-  <script>
-    // Dark-Light Mode
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.title = 'Switch to Light Mode';
-    themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        document.body.classList.toggle('light-mode');
-        
-        // Update button title based on current theme
-        if (document.body.classList.contains('dark-mode')) {
-            themeToggle.title = 'Switch to Light Mode';
-        } else {
-            themeToggle.title = 'Switch to Dark Mode';
-        }
-    });
-</script>
+            // Update button title based on current theme
+            if (document.body.classList.contains('dark-mode')) {
+                themeToggle.title = 'Switch to Light Mode';
+            } else {
+                themeToggle.title = 'Switch to Dark Mode';
+            }
+        });
+    </script>
 </body>
+
 </html>
