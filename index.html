@@ -371,11 +371,47 @@
         </div>
 
         <!-- Projects -->
-        <div class="project section">
+
+        <div class="section">
             <h2>Projects</h2>
             <div class="projects-container">
-                <div class="project-card" data-project></div>
-                <div class="project-card" data-project></div>
+                <div class="project-card" data-project="project-nicktrack">
+                    <h3>NickTrack - Reputation System</h3>
+                </div>
+                <div class="project-card" data-project="project-tabuforkids">
+                    <h3>TabuForKids - a Swift App</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="project-nicktrack" class="project-details-overlay">
+            <div class="project-details-box">
+                <button class="close-button" onclick="closeProjectDetails()">✖</button>
+                <h3>NickTrack - Reputation System</h3>
+                <p>
+                    Developed a reputation system for gamers using Next.js and PostgreSQL.
+                    Implemented a comment system to allow users to comment on other users nicknames in games like CSGO,
+                    League of Legends, etc.
+                    Used Supabase to handle the backend (database and authentication).
+                </p>
+                <a href="https://github.com/ramazanberkozbek/nicktrack-frontend" class="retro-button" target="_blank"
+                    rel="noopener noreferrer">Learn More</a>
+                <a href="https://nicktrack.com" class="retro-button" target="_blank"
+                    rel="noopener noreferrer">nicktrack.com (WIP)</a>
+            </div>
+        </div>
+        <div id="project-tabuforkids" class="project-details-overlay">
+            <div class="project-details-box">
+                <button class="close-button" onclick="closeProjectDetails()">✖</button>
+                <h3>TabuForKids - a Swift App</h3>
+                <p>
+                    Classic tabu game for kids built with Swift and SwiftUI featuring different
+                    categories with 100+ cards, dynamic game settings
+                    (30-120s timer, 5-30 point targets), multi-team support, and modern MVVM architecture. Includes
+                    state management, data persistence, and responsive design for an engaging fun experience.
+                </p>
+                <a href="https://github.com/ramazanberkozbek/tabuforkids" class="retro-button" target="_blank"
+                    rel="noopener noreferrer">Learn More</a>
             </div>
         </div>
 
@@ -387,32 +423,63 @@
             <p><em>Sep 2021 - Jun 2025 | Osmaniye, Turkiye</em></p>
             <p><a href="https://cs50.harvard.edu/certificates/9cd452de-1890-4e1d-a490-02b9945b5081" class="cs50-link"
                     target="_blank" rel="noopener noreferrer">
-                    <strong>CS50 Harvard</strong></a> <em>- Jan 2025 - Sep 2025</em></p>
+                    <strong>CS50 Harvard</strong></a> <em>- Completed in 2025</em></p>
         </div>
 
         <!-- Technical Skills -->
         <div class="skills section">
             <h2>Technical Skills</h2>
             <ul>
-                <li><strong>Languages : </strong>Python, Next.js, Swift</li>
+                <li><strong>Languages : </strong>Python, Next.js, Swift, JavaScript</li>
                 <li><strong>Development Tools :</strong>FastAPI, PostgreSQL, Docker, DBeaver, Git</li>
             </ul>
         </div>
 
     </div>
     <script>
-        // Dark-Light Mode
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.title = 'Switch to Light Mode';
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            document.body.classList.toggle('light-mode');
+        const jobs = document.querySelectorAll('.job-list li');
+        const jobDetails = document.querySelectorAll('.job-details > div');
+        const toggleButton = document.getElementById('theme-toggle');
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectDetailsOverlays = document.querySelectorAll('.project-details-overlay');
 
-            // Update button title based on current theme
-            if (document.body.classList.contains('dark-mode')) {
-                themeToggle.title = 'Switch to Light Mode';
+        // Experience tab switching
+        jobs.forEach(job => {
+            job.addEventListener('click', () => {
+                jobs.forEach(j => j.classList.remove('active'));
+                job.classList.add('active');
+
+                jobDetails.forEach(detail => detail.style.display = 'none');
+                document.getElementById(job.getAttribute('data-job')).style.display = 'block';
+            });
+        });
+
+        // Project card pop-up
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project');
+                document.getElementById(projectId).style.display = 'flex';
+                document.getElementById(projectId).style.opacity = '1';
+            });
+        });
+
+        // Close project pop-up
+        function closeProjectDetails() {
+            projectDetailsOverlays.forEach(overlay => {
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 300);
+            });
+        }
+
+        // Theme toggle
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                toggleButton.title = 'Switch to Dark Mode';
             } else {
-                themeToggle.title = 'Switch to Dark Mode';
+                toggleButton.title = 'Switch to Light Mode';
             }
         });
     </script>
