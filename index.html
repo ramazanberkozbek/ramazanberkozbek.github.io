@@ -106,42 +106,48 @@
             gap: 20px;
         }
 
-        /* İleride kullanıcam xd
-    .job-list {
-        width: 30%;
-    }
-    .job-list ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    .job-list li {
-        margin: 10px 0;
-        padding: 10px;
-        background-color: #555;
-        border: 2px solid #333;
-        box-shadow: 3px 3px 0 #333;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .job-list li:hover {
-        background-color: #666;
-    }
-    .job-list li.active {
-        background-color: #777;
-        font-weight: bold;
-    }
-    .job-details {
-        width: 70%;
-        background-color: #444;
-        border: 2px solid #333;
-        box-shadow: 5px 5px 0 #333;
-        padding: 20px;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .job-details h2 {
-        margin-top: 0;
-    }
-    */
+        /* 
+        .job-list {
+            width: 30%;
+        }
+
+        .job-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .job-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #555;
+            border: 2px solid #333;
+            box-shadow: 3px 3px 0 #333;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .job-list li:hover {
+            background-color: #666;
+        }
+
+        .job-list li.active {
+            background-color: #777;
+            font-weight: bold;
+        }
+
+        .job-details {
+            width: 70%;
+            background-color: #444;
+            border: 2px solid #333;
+            box-shadow: 5px 5px 0 #333;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .job-details h2 {
+            margin-top: 0;
+        } */
+
         .projects-container {
             display: flex;
             gap: 20px;
@@ -302,6 +308,24 @@
         .light-mode a {
             color: #333;
         }
+
+        .cs50-link {
+            color: #ffffff !important;
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+        }
+
+        .cs50-link:hover {
+            opacity: 0.7;
+        }
+
+        .light-mode .cs50-link {
+            color: #333 !important;
+        }
+
+        .light-mode .cs50-link:hover {
+            opacity: 0.7;
+        }
     </style>
 </head>
 
@@ -315,31 +339,29 @@
         <!-- Hakkımda -->
         <div class="about section">
             <h2>About Me</h2>
-            <p>I'm Ramazan. I'm a 4rd-year Computer Engineering student at the University of Osmaniye,
-                focusing on Software Engineering and Machine Learning research.
+            <p>I'm Ramazan. I'm a 4th-year cracked Computer Engineering student at the University of Osmaniye,
+                focusing on developing SaaS applications and rapid MVP development.
                 When I'm not coding, you can find me in the gym, out on a walk, or training in mixed martial arts.
             </p>
         </div>
 
-        <!-- Job İleride kullanıcam xd
-    <div class="job-section">
-      <div class="job-list">
-        <h2>Experience</h2>
-        <ul>
-          <li class="data-job" class></li>
-        </ul>
-      </div>
-      <div class="job-details">
-        <div id display>
-          <h2></h2>
-          <p></p>
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-      </div>  
-    <div>
-    -->
+        <!-- <div class="job-section">
+            <div class="job-list">
+                <h2>Experience</h2>
+                <ul>
+                    <li class="data-job" class></li>
+                </ul>
+            </div>
+            <div class="job-details">
+                <div id display>
+                    <h2></h2>
+                    <p></p>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div> -->
 
         <!-- Projeler -->
         <div class="project section">
@@ -356,6 +378,9 @@
             <p><strong>Osmaniye Korkut Ata University</strong></p>
             <p>Bachelor of Computer Engineering</p>
             <p><em>Sep 2021 - Jun 2025 | Osmaniye, Turkiye</em></p>
+            <p><a href="https://cs50.harvard.edu/certificates/9cd452de-1890-4e1d-a490-02b9945b5081" class="cs50-link"
+                    target="_blank" rel="noopener noreferrer">
+                    <strong>CS50 Harvard</strong></a> <em>- Jan 2025 - Sep 2025</em></p>
         </div>
 
         <!-- Skills -->
@@ -363,7 +388,7 @@
             <h2>Technical Skills</h2>
             <ul>
                 <li><strong>Languages : </strong>Python, Next.js, Swift</li>
-                <li><strong>Development Tools :</strong>Docker, PostgreSQL, DBeaver, Git</li>
+                <li><strong>Development Tools :</strong>FastAPI, PostgreSQL, Docker, DBeaver, Git</li>
             </ul>
         </div>
 
